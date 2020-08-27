@@ -2,6 +2,9 @@
   "name": "project1",
   "type": "module",
   "version": "1.0.0",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
