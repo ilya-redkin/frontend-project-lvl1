@@ -1,0 +1,11 @@
+0000000000000000000000000000000000000000 94ceba12141600391cca7b681db2a64d3dbcc6ca redkin <ilya.redking@gmail.com> 1597766363 -0400	commit (initial): first commit
+94ceba12141600391cca7b681db2a64d3dbcc6ca cbd402cbd25186a3633e60de641af87c81a75620 redkin <ilya.redking@gmail.com> 1597767846 -0400	commit: json file added
+cbd402cbd25186a3633e60de641af87c81a75620 5b563ec75adee1072092dd323944c96966cf96a8 redkin <ilya.redking@gmail.com> 1597769461 -0400	commit: Welcome to the Brain Games!
+5b563ec75adee1072092dd323944c96966cf96a8 f1450f16d621235803fe631b4fad8c8ede9d727a redkin <ilya.redking@gmail.com> 1598302014 -0400	commit: first part of the second step
+f1450f16d621235803fe631b4fad8c8ede9d727a 5da2c8cb91fe46809b6b22ce9a6d8bbe8fd80b5c redkin <ilya.redking@gmail.com> 1598543930 -0400	commit: part two of step two
+5da2c8cb91fe46809b6b22ce9a6d8bbe8fd80b5c 3de8b8946b5b338303a6f949742c8dbe99161109 redkin <ilya.redking@gmail.com> 1598648280 -0400	commit: step 3 - done
+3de8b8946b5b338303a6f949742c8dbe99161109 b0fc52c249e5212e1d8caf10663344b8e8f9c4d9 redkin <ilya.redking@gmail.com> 1598895797 -0400	commit: cli.js added
+b0fc52c249e5212e1d8caf10663344b8e8f9c4d9 08197ed1ceda8957b33c5abf01b55d78babc4e21 redkin <ilya.redking@gmail.com> 1598904825 -0400	commit: step 4, part 1
+08197ed1ceda8957b33c5abf01b55d78babc4e21 7db78fa65551e819dbf70b78bbe522af71c7528d redkin <ilya.redking@gmail.com> 1598989242 -0400	commit: step 4, final
+7db78fa65551e819dbf70b78bbe522af71c7528d 4544339f8ad0cdf8c4fd7ec4d966c7a614bbf379 redkin <ilya.redking@gmail.com> 1598989701 -0400	commit: CI badge added
+4544339f8ad0cdf8c4fd7ec4d966c7a614bbf379 bca7a0e77a266a51de95ed2c89826fa87be3a7ab redkin <ilya.redking@gmail.com> 1599081741 -0400	commit: step 5 part 1
