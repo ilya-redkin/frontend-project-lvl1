@@ -16,7 +16,6 @@ for (let i = 0; i <= 2;) {
         console.log(`"${answer}" is wrong answer ;(. Correct answer was "yes".\nLet's try again, ${userName}!`)
         break;
     }
-<<<<<<< HEAD
     if (number%2!==0 && answer === 'no') {
         console.log("Correct!");
         i++
@@ -27,9 +26,8 @@ for (let i = 0; i <= 2;) {
     }
     if (i===3) {
         console.log(`Congratulations, ${userName}!`);
+        break;
     }
-=======
->>>>>>> bca7a0e77a266a51de95ed2c89826fa87be3a7ab
 }
 
 }
