@@ -35,4 +35,5 @@ const youCalc = () => {
     }
   }
 };
+youCalc();
 export default youCalc;

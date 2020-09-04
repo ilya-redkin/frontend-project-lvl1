@@ -22,7 +22,7 @@ for (let i = 0; i <= 2;) {
         i++
     }
     if (number%2!==0 && answer !== 'no') {
-        console.log(`"${answer}" is wrong answer ;(. Correct answer was "yes".\nLet's try again, ${userName}!`)
+        console.log(`"${answer}" is wrong answer ;(. Correct answer was "no".\nLet's try again, ${userName}!`)
         break;
     }
     if (i===3) {
@@ -33,4 +33,5 @@ for (let i = 0; i <= 2;) {
 
 }
 
+askNumber();
 export default askNumber;

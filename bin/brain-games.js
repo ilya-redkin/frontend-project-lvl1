@@ -1,11 +1,6 @@
 #!/usr/bin/env node
 import {askName, userName} from "../src/cli.js";
-import askNumber from "./brain-even.js";
-import youCalc from "./brain-calc.js";
-// import _ from 'lodash';
+// import askNumber from "./brain-even.js";
+// import youCalc from "./brain-calc.js";
 
-console.log("Welcome to the Brain Games!");
-
-askName (userName);
-askNumber();
-youCalc();
+askName(userName);

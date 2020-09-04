@@ -6,4 +6,6 @@
 
 
 
-<a href="https://asciinema.org/a/e9E1pU4ykDHXzxRFP4JxmeD4J">Demonstration</a>
+<a href="https://asciinema.org/a/e9E1pU4ykDHXzxRFP4JxmeD4J">Demonstration of brain-even</a>
+
+<a href="https://asciinema.org/a/4w6UKwrpK2LISVtucYP7f0mRO">Demonstration of brain-calc</a>
