@@ -6,12 +6,13 @@
 
 
 
-<a href="https://asciinema.org/a/e9E1pU4ykDHXzxRFP4JxmeD4J">Demonstration of brain-even</a>
+<a href="https://asciinema.org/a/OAUTUK7csAFdOL8siqzUhiPfV">Demonstration of brain-calc</a>
 
-<a href="https://asciinema.org/a/4w6UKwrpK2LISVtucYP7f0mRO">Demonstration of brain-calc</a>
+<a href="https://asciinema.org/a/znRTFTLFl5hQaBfwFSUTOBv2n">Demonstration of brain-even</a>
 
-<a href="https://asciinema.org/a/jYNuhu00UGI0TqaBX6hh9BKGf">Demonstration of brain-gcd</a>
+<a href="https://asciinema.org/a/02RJPFikyoFIaAodx0ZDQAiJb">Demonstration of brain-gcd</a>
 
-<a href="https://asciinema.org/a/om5isPIGOHlZpSeLIVydAis89">Demonstration of brain-progression</a>
+<a href="https://asciinema.org/a/NnfrCLbIQYBiy96UWG4EfUSib">Demonstration of brain-prime</a>
 
+<a href="https://asciinema.org/a/lr6F9JBLBTvwtZX7PUCQ5tZjn">Demonstration of brain-progression</a>
 
