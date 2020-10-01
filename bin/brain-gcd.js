@@ -32,7 +32,6 @@ const checkGcd = () => {
       console.log(`Congratulations, ${userName}!`);
     }
   }
-  
 };
 
 

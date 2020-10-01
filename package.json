@@ -1,5 +1,5 @@
 {
-  "name": "project1",
+  "name": "brain_games_by_ilya",
   "type": "module",
   "version": "1.0.0",
   "bin": {
@@ -10,7 +10,10 @@
     "brain-prime": "bin/brain-prime.js",
     "brain-progression": "bin/brain-progression.js"
   },
-  "description": "",
+  "engines": {
+    "node": ">=14"
+  },
+  "description": "Console application with 5 simple math-based games",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,7 +22,11 @@
     "type": "git",
     "url": "git+https://github.com/ilya-redkin/frontend-project-lvl1.git"
   },
-  "author": "",
+  "keywords": [
+    "brain",
+    "games"
+  ],
+  "author": "Ilya Redkin",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ilya-redkin/frontend-project-lvl1/issues"

@@ -4,7 +4,7 @@
 
 ![CI](https://github.com/ilya-redkin/frontend-project-lvl1/workflows/CI/badge.svg)
 
-
+<a href="https://asciinema.org/a/OAUTUK7csAFdOL8siqzUhiPfV" target="_blank"><img src="https://asciinema.org/a/OAUTUK7csAFdOL8siqzUhiPfV.svg" /></a>
 
 <a href="https://asciinema.org/a/OAUTUK7csAFdOL8siqzUhiPfV">Demonstration of brain-calc</a>
 
