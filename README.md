@@ -1,6 +1,5 @@
 # brain_games_by_ilya
-# frontend-project-lvl1
-Five console games requiring simple math operation from the user. 
+Five console games requiring simple math operations from the user. 
 
 # For installation:
 npm -i brain_games_by_ilya
@@ -9,7 +8,7 @@ npm -i brain_games_by_ilya
 
 ![CI](https://github.com/ilya-redkin/frontend-project-lvl1/workflows/CI/badge.svg)
 
-<a href="https://asciinema.org/a/OAUTUK7csAFdOL8siqzUhiPfV" target="_blank"><img src="https://asciinema.org/a/OAUTUK7csAFdOL8siqzUhiPfV.svg" /></a>
+<a href="https://asciinema.org/a/rjYFrhvxCcutkLJZJnXbV5yhM" target="_blank"><img src="https://asciinema.org/a/rjYFrhvxCcutkLJZJnXbV5yhM.svg" /></a>
 
 <a href="https://asciinema.org/a/znRTFTLFl5hQaBfwFSUTOBv2n" target="_blank"><img src="https://asciinema.org/a/znRTFTLFl5hQaBfwFSUTOBv2n.svg" /></a>
 
