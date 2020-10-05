@@ -1,4 +1,9 @@
+# brain_games_by_ilya
 # frontend-project-lvl1
+Five console games requiring simple math operation from the user. 
+
+# For installation:
+npm -i brain_games_by_ilya
 
 <a href="https://codeclimate.com/github/ilya-redkin/frontend-project-lvl1"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 
