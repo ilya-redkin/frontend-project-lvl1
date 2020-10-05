@@ -10,12 +10,12 @@ npm -i brain_games_by_ilya
 
 <a href="https://asciinema.org/a/rjYFrhvxCcutkLJZJnXbV5yhM" target="_blank"><img src="https://asciinema.org/a/rjYFrhvxCcutkLJZJnXbV5yhM.svg" /></a>
 
-<a href="https://asciinema.org/a/znRTFTLFl5hQaBfwFSUTOBv2n" target="_blank"><img src="https://asciinema.org/a/znRTFTLFl5hQaBfwFSUTOBv2n.svg" /></a>
+<a href="https://asciinema.org/a/whJJunkmekuSgkdjOyboyKFfV" target="_blank"><img src="https://asciinema.org/a/whJJunkmekuSgkdjOyboyKFfV.svg" /></a>
 
-<a href="https://asciinema.org/a/02RJPFikyoFIaAodx0ZDQAiJb" target="_blank"><img src="https://asciinema.org/a/02RJPFikyoFIaAodx0ZDQAiJb.svg" /></a>
+<a href="https://asciinema.org/a/dahMokP63o8UQeESfT1jRSuXy" target="_blank"><img src="https://asciinema.org/a/dahMokP63o8UQeESfT1jRSuXy.svg" /></a>
 
-<a href="https://asciinema.org/a/NnfrCLbIQYBiy96UWG4EfUSib" target="_blank"><img src="https://asciinema.org/a/NnfrCLbIQYBiy96UWG4EfUSib.svg" /></a>
+<a href="https://asciinema.org/a/Kz6RrkiFVfxme6bxANllcZ7h8" target="_blank"><img src="https://asciinema.org/a/Kz6RrkiFVfxme6bxANllcZ7h8.svg" /></a>
 
-<a href="https://asciinema.org/a/lr6F9JBLBTvwtZX7PUCQ5tZjn" target="_blank"><img src="https://asciinema.org/a/lr6F9JBLBTvwtZX7PUCQ5tZjn.svg" /></a>
+<a href="https://asciinema.org/a/OdbYQXFoXujeMmnttkTqOrUFh" target="_blank"><img src="https://asciinema.org/a/OdbYQXFoXujeMmnttkTqOrUFh.svg" /></a>
 
 
