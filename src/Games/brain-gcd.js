@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import readlineSync from "readline-sync";
 import _ from "lodash";
-import {userName} from "../src/cli.js";
+import {userName} from "../cli.js";
 
-const checkGcd = () => {
+export const checkGcd = () => {
   console.log("Find the greatest common divisor of given numbers.");
   for (let i = 0; i <= 2; ) {
     let a = _.random(1, 10),
@@ -35,5 +35,5 @@ const checkGcd = () => {
 };
 
 
-checkGcd();
-export default checkGcd;
+// checkGcd();
+// export default checkGcd;

@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import _ from 'lodash';
-import {userName} from "../src/cli.js";
+import {userName} from "../cli.js";
 
-const askNumber = () => {
+export const checkEven = () => {
 console.log('Answer "yes" if the number is even, otherwise answer "no". ');
 
 for (let i = 0; i <= 2;) {
@@ -33,5 +33,5 @@ for (let i = 0; i <= 2;) {
 
 }
 
-askNumber();
-export default askNumber;
+// checkEven();
+// export default checkEven;

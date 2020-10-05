@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import readlineSync from "readline-sync";
 import _ from "lodash";
-import {userName} from "../src/cli.js";
+import {userName} from "../cli.js";
 
-const youCalc = () => {
+export const calculate = () => {
   console.log("What is the result of the expression?");
   for (let i = 0; i <= 2;) {
     let a = _.random(1, 10);
@@ -35,5 +35,5 @@ const youCalc = () => {
     }
   }
 };
-youCalc();
-export default youCalc;
+//calculate();
+//export default calculate;

@@ -3,12 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "bin": {
-    "brain-games": "bin/brain-games.js",
-    "brain-calc": "bin/brain-calc.js",
-    "brain-even": "bin/brain-even.js",
-    "brain-gcd": "bin/brain-gcd.js",
-    "brain-prime": "bin/brain-prime.js",
-    "brain-progression": "bin/brain-progression.js"
+    "brain-games": "bin/brain-games.js"
   },
   "engines": {
     "node": ">=14"

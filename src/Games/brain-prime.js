@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from "readline-sync";
 import _ from "lodash";
-import { userName } from "../src/cli.js";
+import { userName } from "../cli.js";
 
 const isPrime = (x) => {
   for (let i = x - 1; i > 1; i--) {
@@ -12,7 +12,7 @@ const isPrime = (x) => {
   return true;
 };
 
-const checkPrime = () => {
+export const checkPrime = () => {
   console.log("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
   for (let i = 0; i <= 2; ) {
     let number = _.random(1, 99);
@@ -41,5 +41,5 @@ const checkPrime = () => {
   }
 };
 
-checkPrime();
-export default isPrime;
+// checkPrime();
+// export default isPrime;

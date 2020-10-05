@@ -1,23 +1,23 @@
 #!/usr/bin/env node
 import readlineSync from "readline-sync";
 import _ from "lodash";
-import {userName} from "../src/cli.js";
+import {userName} from "../cli.js";
 
 
-const findNumber = () => {
+export const findNumber = () => {
 console.log("What number is missing in the progression?");
 for (let i = 0; i<=2; ) {
     let progressionStart = _.random(1, 60);
     let increment = _.random(1, 5);
-    let arr = [progressionStart];
+    let rowOfNumbers = [progressionStart];
     let hiddenNumberIndex = _.random(0, 9);
     for (let j = 0; j <= 8; j++) {
-      arr.push(arr[j] + increment);
+      rowOfNumbers.push(rowOfNumbers[j] + increment);
     }
-    let hiddenNumber = arr[hiddenNumberIndex];
-    arr.splice(hiddenNumberIndex, 1, "..");
+    let hiddenNumber = rowOfNumbers[hiddenNumberIndex];
+    rowOfNumbers.splice(hiddenNumberIndex, 1, "..");
   
-    let convertedToSting = arr.join(" ");
+    let convertedToSting = rowOfNumbers.join(" ");
     let answer = readlineSync.question(`Question: ${convertedToSting}\nYour answer:`);
     if (answer == hiddenNumber) {
         console.log("Correct!");
@@ -34,5 +34,5 @@ for (let i = 0; i<=2; ) {
 }
 };
 
-findNumber();
-export default findNumber;
+// findNumber();
+// export default findNumber;
