@@ -3,7 +3,8 @@
   "type": "module",
   "version": "1.0.0",
   "bin": {
-    "brain-games": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-calc": "src/games/brain-calc.js"
   },
   "engines": {
     "node": ">=14"
