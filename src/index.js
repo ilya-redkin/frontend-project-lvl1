@@ -1,9 +1,26 @@
 import readlineSync from 'readline-sync';
-export const sayWelcome = () => {console.log("Welcome to the Brain Games!")};
-
-export const userName = () => {return readlineSync.question('May I have your name? ')};
+export let name;
 
 export const sayHi = () => {
-    const name = readlineSync.question('May I have your name? ');
-    console.log('Hi ' + name + '!');
+    console.log("Welcome to the Brain Games!");
+    const userName = readlineSync.question('May I have your name? ');
+    console.log('Hi ' + userName + '!');
+    name = userName;
 }
+
+export const askQuestion = (question) => {
+    console.log(question);
+}
+
+export const playGame = (playRound) => {
+    for (let i = 0; i <= 3; ) {
+      if (i === 3) {
+        console.log(`Congratulations, ${name}!`);
+        break;
+      } else if (playRound()) {
+        i += 1;
+      } else {
+        break;
+      }
+    }
+  };

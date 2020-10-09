@@ -33,5 +33,5 @@ for (let i = 0; i <= 2;) {
 
 }
 
-// checkEven();
+checkEven();
 // export default checkEven;
