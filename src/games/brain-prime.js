@@ -1,7 +1,16 @@
 #!/usr/bin/env node
-import readlineSync from "readline-sync";
 import _ from "lodash";
-import { userName } from "../cli.js";
+import readlineSync from "readline-sync";
+import { sayHi } from "../index.js";
+import { askQuestion } from "../index.js";
+import { playGame } from "../index.js";
+import { name } from "../index.js";
+
+export const checkPrime = () => {
+  sayHi();
+  askQuestion("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+  playGame(playRound);
+};
 
 const isPrime = (x) => {
   for (let i = x - 1; i > 1; i--) {
@@ -12,34 +21,27 @@ const isPrime = (x) => {
   return true;
 };
 
-export const checkPrime = () => {
-  console.log("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-  for (let i = 0; i <= 2; ) {
-    let number = _.random(1, 99);
-    let result;
-    if (isPrime(number) == true) {
-      result = "yes";
-    } else {
-      result = "no";
-    }
-    let answer = readlineSync.question(`Question: ${number}\nYour answer:`);
-    if (
-      (answer == "yes" && result == "yes") ||
-      (answer == "no" && result == "no")
-    ) {
-      console.log("Correct!");
-      i++;
-    } else {
-      console.log(
-        `"${answer}" is wrong answer ;(. Correct answer was ${result}.\nLet's try again, ${userName}!`
-      );
-      break;
-    }
-    if (i === 3) {
-      console.log(`Congratulations, ${userName}!`);
-    }
+const playRound = () => {
+  let number = _.random(1, 99),
+    result;
+  if (isPrime(number) == true) {
+    result = "yes";
+  } else {
+    result = "no";
+  }
+  let answer = readlineSync.question(`Question: ${number}\nYour answer:`);
+  if (
+    (answer == "yes" && result == "yes") ||
+    (answer == "no" && result == "no")
+  ) {
+    console.log("Correct!");
+    return true;
+  } else {
+    console.log(
+      `"${answer}" is wrong answer ;(. Correct answer was ${result}.\nLet's try again, ${name}!`
+    );
+    return false;
   }
 };
 
-// checkPrime();
-// export default isPrime;
+checkPrime();

@@ -4,7 +4,11 @@
   "version": "1.0.0",
   "bin": {
     "brain-games": "bin/brain-games.js",
-    "brain-calc": "src/games/brain-calc.js"
+    "brain-calc": "src/games/brain-calc.js",
+    "brain-even": "src/games/brain-even.js",
+    "brain-gcd": "src/games/brain-gcd.js",
+    "brain-prime": "src/games/brain-prime.js",
+    "brain-progression": "src/games/brain-progression.js"
   },
   "engines": {
     "node": ">=14"
