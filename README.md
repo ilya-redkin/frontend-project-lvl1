@@ -13,7 +13,7 @@ brain-progression   // the game where your will have to find out the missing num
 Introduce yourself and follow the instructions given by a game.
 
 ## Contributing
-Pull requests are welcome. I will highly appreciate any suggestions towarde the code quality improvement.
+Pull requests are welcome. I will highly appreciate any suggestions towards the code quality improvement.
 
 
 <a href="https://codeclimate.com/github/ilya-redkin/frontend-project-lvl1"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
