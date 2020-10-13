@@ -1,43 +1,40 @@
-#!/usr/bin/env node
-import _ from "lodash";
 import readlineSync from 'readline-sync';
-import {sayHi} from "../index.js";
-import {askQuestion} from "../index.js";
-import {playGame} from "../index.js";
-import {name} from "../index.js";
+import randomNumber from '../utils.js';
+// import playGame from '../index.js';
 
-export const calculate = () => {
-sayHi();
-askQuestion("What is the result of the expression?");
-playGame(playRound);
+let expression;
+let correctAnswer;
+
+const getExpression = () => {
+  const firstNumber = randomNumber(1, 10);
+  const secondNumber = randomNumber(1, 10);
+  const operatorCode = randomNumber(0, 2);
+  let operator;
+  if (operatorCode === 0) {
+    operator = '+';
+    correctAnswer = firstNumber + secondNumber;
+  } else if (operatorCode === 1) {
+    operator = '-';
+    correctAnswer = firstNumber - secondNumber;
+  } else if (operatorCode === 2) {
+    operator = '*';
+    correctAnswer = firstNumber * secondNumber;
+  }
+  expression = `${firstNumber}${operator}${secondNumber}`;
 };
 
 const playRound = () => {
-  let a = _.random(1, 10),
-    b = _.random(1, 10),
-    operatorCode = _.random(0, 2),
-    operator;
-  if (operatorCode === 0) {
-    operator = "+";
-  } else if (operatorCode === 1) {
-    operator = "-";
-  } else if (operatorCode === 2) {
-    operator = "*";
-  }
-  let expression = `${a} ${operator} ${b}`;
-  let trueValue = eval(expression);
-
-  let answer = readlineSync.question(`Question: ${expression}\nYour answer:`);
-  if (answer == trueValue) {
-    console.log("Correct!");
+  getExpression();
+  const answer = readlineSync.question(`Question: ${expression}\nYour answer:`);
+  if (parseInt(answer, 10) === correctAnswer) {
     return true;
   }
-  if (answer != trueValue) {
-    console.log(
-      `"${answer}" is wrong answer ;(. Correct answer was "${trueValue}")\nLet's try again, ${name}!`
-    );
+  if (parseInt(answer, 10) !== correctAnswer) {
+    console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}")`);
     return false;
   }
+  return null;
 };
 
-calculate();
+// playGame(playRound, 'What is the result of the expression?');
+export default playRound;

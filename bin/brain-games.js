@@ -1,4 +1,2 @@
 #!/usr/bin/env node
-import {sayHi} from "../src/index.js";
-
-sayHi();
+console.log('Welcome to the Brain Games!');

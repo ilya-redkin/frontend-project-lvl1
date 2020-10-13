@@ -1,40 +1,23 @@
-#!/usr/bin/env node
-import _ from "lodash";
-import readlineSync from "readline-sync";
-import { sayHi } from "../index.js";
-import { askQuestion } from "../index.js";
-import { playGame } from "../index.js";
-import { name } from "../index.js";
-
-export const findNumber = () => {
-  sayHi();
-  askQuestion("What number is missing in the progression?");
-  playGame(playRound);
-};
+import readlineSync from 'readline-sync';
+import randomNumber from '../utils.js';
 
 const playRound = () => {
+  const progressionStart = randomNumber(1, 60);
+  const increment = randomNumber(1, 5);
+  const rowOfNumbers = [progressionStart];
+  const hiddenNumberIndex = randomNumber(0, 9);
+  for (let i = 0; i <= 8; i += 1) {
+    rowOfNumbers.push(rowOfNumbers[i] + increment);
+  }
+  const correctAnswer = rowOfNumbers[hiddenNumberIndex];
+  rowOfNumbers.splice(hiddenNumberIndex, 1, '..');
 
-    let progressionStart = _.random(1, 60);
-    let increment = _.random(1, 5);
-    let rowOfNumbers = [progressionStart];
-    let hiddenNumberIndex = _.random(0, 9);
-    for (let i = 0; i <= 8; i++) {
-      rowOfNumbers.push(rowOfNumbers[i] + increment);
-    }
-    let hiddenNumber = rowOfNumbers[hiddenNumberIndex];
-    rowOfNumbers.splice(hiddenNumberIndex, 1, "..");
-  
-    let convertedToSting = rowOfNumbers.join(" ");
-    let answer = readlineSync.question(`Question: ${convertedToSting}\nYour answer:`);
-    if (answer == hiddenNumber) {
-        console.log("Correct!");
-      return true;
-    } else {
-        console.log(
-          `"${answer}" is wrong answer ;(. Correct answer was ${hiddenNumber}.\nLet's try again, ${name}!`
-        );
-        return false;
-    }
-    };
-
-findNumber();
+  const convertedToSting = rowOfNumbers.join(' ');
+  const answer = readlineSync.question(`Question: ${convertedToSting}\nYour answer:`);
+  if (parseInt(answer, 10) === correctAnswer) {
+    return true;
+  }
+  console.log(`"${answer}" is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+  return false;
+};
+export default playRound;
