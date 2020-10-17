@@ -1,23 +1,28 @@
-import readlineSync from 'readline-sync';
 import randomNumber from '../utils.js';
+import runGameEngine from '../index.js';
 
-const playRound = () => {
-  const number = randomNumber(1, 99);
-  const answer = readlineSync.question(`Question: ${number}\nYour answer: `);
-  if (
-    (number % 2 === 0 && answer === 'yes')
-    || (number % 2 !== 0 && answer === 'no')
-  ) {
+const isEven = (number) => {
+  if (number % 2 === 0) {
     return true;
   }
-  if (number % 2 === 0 && answer !== 'yes') {
-    console.log(`"${answer}" is wrong answer ;(. Correct answer was "yes".`);
-    return false;
-  }
-  if (number % 2 !== 0 && answer !== 'no') {
-    console.log(`"${answer}" is wrong answer ;(. Correct answer was "no".`);
-    return false;
-  }
-  return null;
+  return false;
 };
-export default playRound;
+
+const getCorrectAnswer = (number) => {
+  if (isEven(number)) {
+    return 'yes';
+  }
+  return 'no';
+};
+
+const playGame = () => {
+  const question = 'Answer "yes" if the number is even, otherwise answer "no". ';
+  const arrayOfData = [];
+  for (let numberOfRound = 0; numberOfRound < 3; numberOfRound += 1) {
+    const expression = randomNumber(1, 99);
+    const correctAnswer = getCorrectAnswer(expression);
+    arrayOfData.push(expression, correctAnswer);
+  }
+  runGameEngine(question, arrayOfData);
+};
+export default playGame;

@@ -1,4 +1,4 @@
-import readlineSync from 'readline-sync';
+import runGameEngine from '../index.js';
 import randomNumber from '../utils.js';
 
 const isPrime = (number) => {
@@ -10,22 +10,21 @@ const isPrime = (number) => {
   return true;
 };
 
-const playRound = () => {
-  const number = randomNumber(1, 99);
-  let correctAnswer;
-  if (isPrime(number) === true) {
-    correctAnswer = 'yes';
-  } else {
-    correctAnswer = 'no';
+const getCorrectAnswer = (number) => {
+  if (isPrime(number)) {
+    return 'yes';
   }
-  const answer = readlineSync.question(`Question: ${number}\nYour answer:`);
-  if (
-    (answer === 'yes' && correctAnswer === 'yes')
-    || (answer === 'no' && correctAnswer === 'no')
-  ) {
-    return true;
-  }
-  console.log(`"${answer}" is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-  return false;
+  return 'no';
 };
-export default playRound;
+
+const playGame = () => {
+  const question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const arrayOfData = [];
+  for (let numberOfRound = 0; numberOfRound < 3; numberOfRound += 1) {
+    const expression = randomNumber(1, 99);
+    const correctAnswer = getCorrectAnswer(expression);
+    arrayOfData.push(expression, correctAnswer);
+  }
+  runGameEngine(question, arrayOfData);
+};
+export default playGame;

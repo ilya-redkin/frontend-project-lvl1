@@ -1,23 +1,29 @@
-import readlineSync from 'readline-sync';
+import runGameEngine from '../index.js';
 import randomNumber from '../utils.js';
 
-const playRound = () => {
-  const firstNumber = randomNumber(1, 10);
-  const secondNumber = randomNumber(1, 10);
-  const min = Math.min(firstNumber, secondNumber);
-  const max = Math.max(firstNumber, secondNumber);
-  const answer = readlineSync.question(`Question: ${firstNumber} ${secondNumber}\nYour answer:`);
-  let correctAnswer;
+const getCorrectAnswer = (numberOne, numberTwo) => {
+  const min = Math.min(numberOne, numberTwo);
+  const max = Math.max(numberOne, numberTwo);
   for (let i = min; i > 0; i -= 1) {
     if (max % i === 0 && min % i === 0) {
-      correctAnswer = i;
-      break;
+      return i;
     }
   }
-  if (parseInt(answer, 10) === correctAnswer) {
-    return true;
-  }
-  console.log(`"${answer}" is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-  return false;
+  return null;
 };
-export default playRound;
+
+const getExpression = (numberOne, numberTwo) => `${numberOne} ${numberTwo}`;
+
+const playGame = () => {
+  const question = 'Find the greatest common divisor of given numbers.';
+  const arrayOfData = [];
+  for (let numberOfRound = 0; numberOfRound < 3; numberOfRound += 1) {
+    const firstNumber = randomNumber(1, 10);
+    const secondNumber = randomNumber(1, 10);
+    const expression = getExpression(firstNumber, secondNumber);
+    const correctAnswer = getCorrectAnswer(firstNumber, secondNumber);
+    arrayOfData.push(expression, correctAnswer);
+  }
+  runGameEngine(question, arrayOfData);
+};
+export default playGame;
