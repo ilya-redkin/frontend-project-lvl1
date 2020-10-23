@@ -1,35 +1,41 @@
-import randomNumber from '../utils.js';
+import { randomNumber } from '../utils.js';
 import runGameEngine from '../index.js';
+
+const ROUNDS_COUNT = 3;
 
 const getOperator = () => {
   const operators = '+-*';
   return operators[randomNumber(0, 2)];
 };
-const getCorrectAnswer = (numberOne, sign, numberTwo) => {
-  switch (sign) {
+const getCorrectAnswer = (firstNumber, operator, secondNumber) => {
+  switch (operator) {
     case '+':
-      return numberOne + numberTwo;
+      return firstNumber + secondNumber;
     case '-':
-      return numberOne - numberTwo;
+      return firstNumber - secondNumber;
     case '*':
-      return numberOne * numberTwo;
-    default: break;
+      return firstNumber * secondNumber;
+    default: throw new Error(`Unknown operator: '${operator}'!`);
   }
-  return null;
 };
-const getExpression = (numberOne, sign, numberTwo) => `${numberOne}${sign}${numberTwo}`;
+const getRoundQuestion = (firstNumber, operator, secondNumber) => `${firstNumber}${operator}${secondNumber}`;
 
-const playGame = () => {
-  const question = 'What is the result of the expression?';
-  const arrayOfData = [];
-  for (let numberOfRound = 0; numberOfRound < 3; numberOfRound += 1) {
-    const firstNumber = randomNumber(1, 10);
-    const secondNumber = randomNumber(1, 10);
-    const operator = getOperator();
-    const expression = getExpression(firstNumber, operator, secondNumber);
-    const correctAnswer = getCorrectAnswer(firstNumber, operator, secondNumber);
-    arrayOfData.push(expression, correctAnswer);
-  }
-  runGameEngine(question, arrayOfData);
+const generateRound = () => {
+  const firstNumber = randomNumber(1, 10);
+  const secondNumber = randomNumber(1, 10);
+  const operator = getOperator();
+  const round = {
+    roundQuestion: getRoundQuestion(firstNumber, operator, secondNumber),
+    correctAnswer: getCorrectAnswer(firstNumber, operator, secondNumber).toString(),
+  };
+  return round;
 };
-export default playGame;
+
+export const playGame = () => {
+  const gameDirective = 'What is the result of the expression?';
+  const arrayOfRounds = [];
+  for (let numberOfRound = 0; numberOfRound < ROUNDS_COUNT; numberOfRound += 1) {
+    arrayOfRounds.push(generateRound());
+  }
+  runGameEngine(gameDirective, arrayOfRounds);
+};

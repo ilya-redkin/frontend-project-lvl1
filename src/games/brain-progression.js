@@ -1,32 +1,39 @@
 import runGameEngine from '../index.js';
-import randomNumber from '../utils.js';
+import { randomNumber } from '../utils.js';
 
-const getProgression = (maxProgression, maxIncrement) => {
-  const progressionStart = randomNumber(1, maxProgression);
-  const increment = randomNumber(1, maxIncrement);
+const ROUNDS_COUNT = 3;
+const LENGTH_OF_PROGRESSION_MINUS_ONE = 8;
+
+const getProgression = (progressionStart, increment) => {
   const rowOfNumbers = [progressionStart];
-  for (let i = 0; i <= 8; i += 1) {
+  for (let i = 0; i <= LENGTH_OF_PROGRESSION_MINUS_ONE; i += 1) {
     rowOfNumbers.push(rowOfNumbers[i] + increment);
   }
   return rowOfNumbers;
 };
 
-const getExpression = (progression, hiddenNumberIndex) => {
-  progression.splice(hiddenNumberIndex, 1, '..');
-  const convertedToSting = progression.join(' ');
+const getRoundQuestion = (progression, hiddenNumberIndex) => {
+  const progressionClone = progression.slice();
+  progressionClone.splice(hiddenNumberIndex, 1, '..');
+  const convertedToSting = progressionClone.join(' ');
   return convertedToSting;
 };
 
-const playGame = () => {
-  const question = 'What number is missing in the progression?';
-  const arrayOfData = [];
-  for (let numberOfRound = 0; numberOfRound < 3; numberOfRound += 1) {
-    const progression = getProgression(60, 5);
-    const hiddenNumberIndex = randomNumber(0, 9);
-    const correctAnswer = progression[hiddenNumberIndex];
-    const expression = getExpression(progression, hiddenNumberIndex);
-    arrayOfData.push(expression, correctAnswer);
-  }
-  runGameEngine(question, arrayOfData);
+const generateRound = () => {
+  const progression = getProgression(randomNumber(1, 60), randomNumber(1, 5));
+  const hiddenNumberIndex = randomNumber(0, 9);
+  const round = {
+    roundQuestion: getRoundQuestion(progression, hiddenNumberIndex),
+    correctAnswer: progression[hiddenNumberIndex].toString(),
+  };
+  return round;
 };
-export default playGame;
+
+export const playGame = () => {
+  const gameDirective = 'What number is missing in the progression?';
+  const arrayOfRounds = [];
+  for (let numberOfRound = 0; numberOfRound < ROUNDS_COUNT; numberOfRound += 1) {
+    arrayOfRounds.push(generateRound());
+  }
+  runGameEngine(gameDirective, arrayOfRounds);
+};

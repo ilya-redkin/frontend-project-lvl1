@@ -1,28 +1,26 @@
-import randomNumber from '../utils.js';
+import { randomNumber } from '../utils.js';
 import runGameEngine from '../index.js';
 
-const isEven = (number) => {
-  if (number % 2 === 0) {
-    return true;
-  }
-  return false;
+const ROUNDS_COUNT = 3;
+
+const isEven = (number) => (number % 2 === 0);
+
+const getCorrectAnswer = (number) => (isEven(number) ? 'yes' : 'no');
+
+const generateRound = () => {
+  const numberForRound = randomNumber(1, 99);
+  const round = {
+    roundQuestion: numberForRound,
+    correctAnswer: getCorrectAnswer(numberForRound),
+  };
+  return round;
 };
 
-const getCorrectAnswer = (number) => {
-  if (isEven(number)) {
-    return 'yes';
+export const playGame = () => {
+  const gameDirective = 'Answer "yes" if the number is even, otherwise answer "no". ';
+  const arrayOfRounds = [];
+  for (let numberOfRound = 0; numberOfRound < ROUNDS_COUNT; numberOfRound += 1) {
+    arrayOfRounds.push(generateRound());
   }
-  return 'no';
+  runGameEngine(gameDirective, arrayOfRounds);
 };
-
-const playGame = () => {
-  const question = 'Answer "yes" if the number is even, otherwise answer "no". ';
-  const arrayOfData = [];
-  for (let numberOfRound = 0; numberOfRound < 3; numberOfRound += 1) {
-    const expression = randomNumber(1, 99);
-    const correctAnswer = getCorrectAnswer(expression);
-    arrayOfData.push(expression, correctAnswer);
-  }
-  runGameEngine(question, arrayOfData);
-};
-export default playGame;
