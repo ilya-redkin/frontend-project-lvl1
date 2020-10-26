@@ -1,26 +1,24 @@
-import { randomNumber } from '../utils.js';
+import { getRandomNumber, ROUNDS_COUNT } from '../utils.js';
 import runGameEngine from '../index.js';
-
-const ROUNDS_COUNT = 3;
 
 const isEven = (number) => (number % 2 === 0);
 
 const getCorrectAnswer = (number) => (isEven(number) ? 'yes' : 'no');
 
 const generateRound = () => {
-  const numberForRound = randomNumber(1, 99);
+  const number = getRandomNumber(1, 99);
   const round = {
-    roundQuestion: numberForRound,
-    correctAnswer: getCorrectAnswer(numberForRound),
+    roundQuestion: number,
+    correctAnswer: getCorrectAnswer(number),
   };
   return round;
 };
 
 export const playGame = () => {
-  const gameDirective = 'Answer "yes" if the number is even, otherwise answer "no". ';
-  const arrayOfRounds = [];
+  const gameTask = 'Answer "yes" if the number is even, otherwise answer "no". ';
+  const rounds = [];
   for (let numberOfRound = 0; numberOfRound < ROUNDS_COUNT; numberOfRound += 1) {
-    arrayOfRounds.push(generateRound());
+    rounds.push(generateRound());
   }
-  runGameEngine(gameDirective, arrayOfRounds);
+  runGameEngine(gameTask, rounds);
 };

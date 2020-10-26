@@ -1,17 +1,17 @@
 import runGameEngine from '../index.js';
-import { randomNumber } from '../utils.js';
+import { getRandomNumber, ROUNDS_COUNT } from '../utils.js';
 
-const ROUND_COUNT = 3;
-
-// eslint-disable-next-line consistent-return
 const getGCD = (firstNumber, secondNumber) => {
   const min = Math.min(firstNumber, secondNumber);
   const max = Math.max(firstNumber, secondNumber);
+  let gcd;
   for (let lowestNumber = min; lowestNumber > 0; lowestNumber -= 1) {
     if (max % lowestNumber === 0 && min % lowestNumber === 0) {
-      return lowestNumber;
+      gcd = lowestNumber;
+      break;
     }
   }
+  return gcd;
 };
 
 const getCorrectAnswer = (firstNumber, secondNumber) => getGCD(firstNumber, secondNumber);
@@ -19,8 +19,8 @@ const getCorrectAnswer = (firstNumber, secondNumber) => getGCD(firstNumber, seco
 const getRoundQuestion = (firstNumber, secondNumber) => `${firstNumber} ${secondNumber}`;
 
 const generateRound = () => {
-  const firstNumber = randomNumber(1, 10);
-  const secondNumber = randomNumber(1, 10);
+  const firstNumber = getRandomNumber(1, 10);
+  const secondNumber = getRandomNumber(1, 10);
   const round = {
     roundQuestion: getRoundQuestion(firstNumber, secondNumber),
     correctAnswer: getCorrectAnswer(firstNumber, secondNumber).toString(),
@@ -29,10 +29,10 @@ const generateRound = () => {
 };
 
 export const playGame = () => {
-  const gameDirective = 'Find the greatest common divisor of given numbers.';
-  const arrayOfRounds = [];
-  for (let numberOfRound = 0; numberOfRound < ROUND_COUNT; numberOfRound += 1) {
-    arrayOfRounds.push(generateRound());
+  const gameTask = 'Find the greatest common divisor of given numbers.';
+  const rounds = [];
+  for (let numberOfRound = 0; numberOfRound < ROUNDS_COUNT; numberOfRound += 1) {
+    rounds.push(generateRound());
   }
-  runGameEngine(gameDirective, arrayOfRounds);
+  runGameEngine(gameTask, rounds);
 };

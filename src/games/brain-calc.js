@@ -1,11 +1,9 @@
-import { randomNumber } from '../utils.js';
+import { getRandomNumber, ROUNDS_COUNT } from '../utils.js';
 import runGameEngine from '../index.js';
-
-const ROUNDS_COUNT = 3;
 
 const getOperator = () => {
   const operators = '+-*';
-  return operators[randomNumber(0, 2)];
+  return operators[getRandomNumber(0, 2)];
 };
 const getCorrectAnswer = (firstNumber, operator, secondNumber) => {
   switch (operator) {
@@ -21,8 +19,8 @@ const getCorrectAnswer = (firstNumber, operator, secondNumber) => {
 const getRoundQuestion = (firstNumber, operator, secondNumber) => `${firstNumber}${operator}${secondNumber}`;
 
 const generateRound = () => {
-  const firstNumber = randomNumber(1, 10);
-  const secondNumber = randomNumber(1, 10);
+  const firstNumber = getRandomNumber(1, 10);
+  const secondNumber = getRandomNumber(1, 10);
   const operator = getOperator();
   const round = {
     roundQuestion: getRoundQuestion(firstNumber, operator, secondNumber),
@@ -32,10 +30,10 @@ const generateRound = () => {
 };
 
 export const playGame = () => {
-  const gameDirective = 'What is the result of the expression?';
-  const arrayOfRounds = [];
+  const gameTask = 'What is the result of the expression?';
+  const rounds = [];
   for (let numberOfRound = 0; numberOfRound < ROUNDS_COUNT; numberOfRound += 1) {
-    arrayOfRounds.push(generateRound());
+    rounds.push(generateRound());
   }
-  runGameEngine(gameDirective, arrayOfRounds);
+  runGameEngine(gameTask, rounds);
 };
