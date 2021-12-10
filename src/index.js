@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import greeting from './greeting';
+import greeting from './greeting.js';
 
 const runGameEngine = (gameTask, rounds) => {
   const userName = greeting();
