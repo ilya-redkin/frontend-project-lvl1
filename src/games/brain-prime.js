@@ -21,7 +21,7 @@ const generateRound = () => {
   return round;
 };
 
-export const playGame = () => {
+const playGame = () => {
   const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const rounds = [];
   for (let numberOfRound = 0; numberOfRound < ROUNDS_COUNT; numberOfRound += 1) {
@@ -29,3 +29,5 @@ export const playGame = () => {
   }
   runGameEngine(gameTask, rounds);
 };
+
+export default playGame;

@@ -27,7 +27,7 @@ const generateRound = () => {
   return round;
 };
 
-export const playGame = () => {
+const playGame = () => {
   const gameTask = 'What number is missing in the progression?';
   const rounds = [];
   for (let numberOfRound = 0; numberOfRound < ROUNDS_COUNT; numberOfRound += 1) {
@@ -35,3 +35,5 @@ export const playGame = () => {
   }
   runGameEngine(gameTask, rounds);
 };
+
+export default playGame;

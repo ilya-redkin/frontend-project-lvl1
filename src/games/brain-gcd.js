@@ -28,7 +28,7 @@ const generateRound = () => {
   return round;
 };
 
-export const playGame = () => {
+const playGame = () => {
   const gameTask = 'Find the greatest common divisor of given numbers.';
   const rounds = [];
   for (let numberOfRound = 0; numberOfRound < ROUNDS_COUNT; numberOfRound += 1) {
@@ -36,3 +36,5 @@ export const playGame = () => {
   }
   runGameEngine(gameTask, rounds);
 };
+
+export default playGame;
