@@ -1,5 +1,5 @@
-import runGameEngine from '../index.js';
-import { getRandomNumber, ROUNDS_COUNT } from '../utils.js';
+import { runGameEngine, ROUNDS_COUNT } from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const LENGTH_OF_PROGRESSION = 10;
 

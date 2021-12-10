@@ -1,5 +1,5 @@
-import runGameEngine from '../index.js';
-import { getRandomNumber, ROUNDS_COUNT } from '../utils.js';
+import { runGameEngine, ROUNDS_COUNT } from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const isPrime = (number) => {
   for (let i = number - 1; i > 1; i -= 1) {

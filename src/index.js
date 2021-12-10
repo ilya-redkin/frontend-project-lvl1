@@ -1,7 +1,9 @@
 import readlineSync from 'readline-sync';
 import greeting from './greeting.js';
 
-const runGameEngine = (gameTask, rounds) => {
+export const ROUNDS_COUNT = 3;
+
+export const runGameEngine = (gameTask, rounds) => {
   const userName = greeting();
   console.log(gameTask);
   for (let numberOfRound = 0; numberOfRound < rounds.length; numberOfRound += 1) {
@@ -15,4 +17,3 @@ const runGameEngine = (gameTask, rounds) => {
   }
   console.log(`Congratulations, ${userName}!`);
 };
-export default runGameEngine;

@@ -1,5 +1,5 @@
-import { getRandomNumber, ROUNDS_COUNT } from '../utils.js';
-import runGameEngine from '../index.js';
+import getRandomNumber from '../utils.js';
+import { runGameEngine, ROUNDS_COUNT } from '../index.js';
 
 const isEven = (number) => (number % 2 === 0);
 
