@@ -16,7 +16,7 @@ const getCorrectAnswer = (firstNumber, operator, secondNumber) => {
     default: throw new Error(`Unknown operator: '${operator}'!`);
   }
 };
-const getRoundQuestion = (firstNumber, operator, secondNumber) => `${firstNumber}${operator}${secondNumber}`;
+const getRoundQuestion = (firstNumber, operator, secondNumber) => `${firstNumber} ${operator} ${secondNumber}`;
 
 const generateRound = () => {
   const firstNumber = getRandomNumber(1, 10);
